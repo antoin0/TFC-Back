@@ -11,11 +11,6 @@ class UsuarioPersonalizado(AbstractUser):
 # Modelo de Personaje
 class Personaje(models.Model):
 
-    ESTADOS = [
-        ('vivo', 'Vivo'),
-        ('muerto', 'Muerto'),
-    ]
-
     CLASES = [
         ('stalker', 'Stalker'),
         ('mecanico', 'Mecanico'),
@@ -32,7 +27,6 @@ class Personaje(models.Model):
 
     nombre = models.CharField(max_length=15)
     usuario = models.ForeignKey(UsuarioPersonalizado, on_delete=models.CASCADE, related_name="personajes")
-    estado = models.CharField(max_length=10, choices=ESTADOS, default='vivo')
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     clase = models.CharField(max_length=12, choices=CLASES,default='stalker')
 
@@ -58,11 +52,10 @@ class Personaje(models.Model):
     armorPoints = models.IntegerField(blank=True)
     extras = models.TextField(max_length=500,blank=True)
 
-
     def save(self,*args, **kwargs):
         if self.clase == 'stalker':
             self.combat+=10
-            self.body+=10
+            self.cuerpo+=10
             self.fear+=20
             self.maxWounds+=1
 
@@ -77,7 +70,7 @@ class Personaje(models.Model):
             self.intelig+=10
             self.sanity+=30
 
-        if self.clase == 'Granjero':
+        if self.clase == 'granjero':
             #+5 stats
             self.fuerza+=5
             self.velocidad+=5

@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from demon.views import PersonajesAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('demon.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('personajes/', PersonajesAPIView.as_view(),name = 'personajes_usuario'),
 ]
