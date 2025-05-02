@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from demon.models import Personaje
 from .serializers import PJSerializer, ArmaSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -19,10 +21,19 @@ class ListUsers(APIView):
         return Response(usernames)
 
 
+class PersonajesAPIView(APIView):
+    #permission_classes = [IsAuthenticated]
 
-@require_http_methods(["POST"])
-class crearPejota(APIView):
-    authentication_classes = [permissions.IsAuthenticated]
+    def get(self, request):
+        personajes = Personaje.objects.filter(usuario=request.user).select_related("usuario")
+        lista_pjs = []
 
-    def post(self, request):
-        return Response({"mensaje":"q pàsa tarantula"})
+        for pj in personajes:
+            info_pj_ind = {
+                "nombre": pj.nombre,
+                "estado": pj.estado,
+                "fecha_creacion": pj.fecha_creacion,
+            }
+            lista_pjs.append(info_pj_ind)
+
+        return Response(lista_pjs)
