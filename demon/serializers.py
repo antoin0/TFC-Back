@@ -10,7 +10,7 @@ class ArmaSerializer(serializers.ModelSerializer):
 class PJSerializer(serializers.ModelSerializer):
     class Meta:
         model = Personaje
-        fields = ('id','usuario','nombre','estado','clase','fuerza','velocidad','intelig','combat','sanity','fear','cuerpo','maxHP','maxWounds','stress','traumaRes','dinero','armorPoints','extras')
+        fields = ('id','usuario','nombre','clase','fuerza','velocidad','intelig','combat','sanity','fear','cuerpo','maxHP','maxWounds','stress','traumaRes','dinero','armorPoints','extras')
 
 
 class UserSerializer(serializers.ModelSerializer):
