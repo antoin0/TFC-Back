@@ -25,7 +25,7 @@ class Personaje(models.Model):
         ('granjero', 'Una vez por sesion, puedes tener ventaja en un check de PANICO'),
     ]
 
-    nombre = models.CharField(max_length=15)
+    nombre = models.CharField(max_length=30)
     usuario = models.ForeignKey(UsuarioPersonalizado, on_delete=models.CASCADE, related_name="personajes")
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     clase = models.CharField(max_length=12, choices=CLASES,default='stalker')
@@ -52,6 +52,7 @@ class Personaje(models.Model):
     armorPoints = models.IntegerField(blank=True)
     extras = models.TextField(max_length=500,blank=True)
 
+    #Override del guardado para modificar los stats que el jugador NO escoge
     def save(self,*args, **kwargs):
         if self.clase == 'stalker':
             self.combat+=10
@@ -80,6 +81,8 @@ class Personaje(models.Model):
             self.sanity+=10
             self.fear+=10
             self.cuerpo+=10
+
+        super(Personaje, self).save(*args, **kwargs)
 
 #Modelo de Armas.
 class Arma(models.Model):

@@ -2,8 +2,6 @@ from django.urls import path
 from rest_framework import routers
 from .api import ArmaViewSet, PersonajeViewSet, UserViewSet
 from rest_framework.authtoken.views import ObtainAuthToken
-from .models import Arma, Personaje
-from .views import ListUsers, PersonajesAPIView
 
 router = routers.DefaultRouter()
 

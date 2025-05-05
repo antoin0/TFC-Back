@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('demon.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('personajes/', PersonajesAPIView.as_view(),name = 'personajes_usuario'),
 ]

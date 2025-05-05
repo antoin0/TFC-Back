@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
 
@@ -20,7 +21,7 @@ class ListUsers(APIView):
         usernames = [ user.username for user in User.objects.all()]
         return Response(usernames)
 
-
+@csrf_exempt
 class PersonajesAPIView(APIView):
     #permission_classes = [IsAuthenticated]
 
