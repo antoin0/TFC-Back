@@ -1,3 +1,4 @@
+import json
 from django.utils import timezone
 
 
@@ -29,7 +30,7 @@ class Personaje(models.Model):
     usuario = models.ForeignKey(UsuarioPersonalizado, on_delete=models.CASCADE, related_name="personajes")
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     clase = models.CharField(max_length=12, choices=CLASES,default='stalker')
-    habilidades = models.TextField(max_length=500,blank=True)
+    habilidades = models.TextField(max_length=500,blank=True, default='[]' )
     #stats
     fuerza = models.IntegerField()
     velocidad = models.IntegerField()
@@ -54,17 +55,22 @@ class Personaje(models.Model):
 
     #Override del guardado para modificar los stats que el jugador NO escoge
     def save(self,*args, **kwargs):
+
+        habilidades = json.loads(self.habilidades) if self.habilidades else []
+
         if self.clase == 'stalker':
             self.combat+=10
             self.cuerpo+=10
             self.fear+=20
             self.maxWounds+=1
+            habilidades+=['ap_combate','atletismo']
 
         if self.clase == 'mecanico':
             #PENDING -10 a un stat
             self.intelig+=20
             self.fear+=60
             self.maxWounds+=1
+            habilidades+=['eq_industrial','chapuzas','arqueologia']
 
         if self.clase == 'ciberchaman':
             #PENDING +5 a 1 stat
@@ -81,7 +87,9 @@ class Personaje(models.Model):
             self.sanity+=10
             self.fear+=10
             self.cuerpo+=10
+            habilidades+=['eq_industrial', 'patologia']
 
+        self.habilidades = json.dumps(habilidades)
         super(Personaje, self).save(*args, **kwargs)
 
 #Modelo de Armas.
