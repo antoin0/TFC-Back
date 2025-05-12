@@ -25,8 +25,6 @@ _Se encarga de montar la base de datos donde se guardará la informacion de los 
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [NextJS](https://nextjs.org/) - El framework web usado (REACT) (FRONT)
 * [PNPM](https://pnpm.io/es/) - Manejador de dependencias
 * [TailWindCSS](https://tailwindcss.com/) - Usado para el CSS responsive
