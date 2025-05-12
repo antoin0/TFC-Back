@@ -18,7 +18,7 @@ _Como otros proyectos de django, asegurate de crear un entorno virtual donde ins
 
 ## Despliegue 📦
 
-_Esta aplicacion es el backend de [MothershipRPG Character creator](https://github.com/antoin0/TFC-Front) que monta la base de datos donde se guarda la informacion de los personajes_
+_Esta aplicacion es el backend de [DemonshipRPG Character creator](https://github.com/antoin0/TFC-Front) que monta la base de datos donde se guarda la informacion de los personajes_
 
 
 ## Construido con 🛠️
