@@ -27,7 +27,7 @@ _Se encarga de montar la base de datos donde se guardará la informacion de los 
 
 * [NextJS](https://nextjs.org/) - El framework web usado (REACT) (FRONT)
 * [PNPM](https://pnpm.io/es/) - Manejador de dependencias
-* [TailWindCSS](https://tailwindcss.com/) - Usado para el CSS responsive
+* [TailwindCSS](https://tailwindcss.com/) - Usado para el CSS responsive
 * [Django](https://www.djangoproject.com/) - Backend 
 
 
