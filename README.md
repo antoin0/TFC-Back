@@ -13,7 +13,7 @@ _Ordenador y navegador posterior a 2010_
 
 ### Instalación 🔧
 
-_Como otros proyectos de django, asegurate de crear un entorno virtual donde instalar django asi como el resto de paquetes que utiliza el proyecto: Corsheaders, django rest framework y Swagger_
+_Como otros proyectos de django, asegurate de crear un entorno virtual donde instalar django asi como el resto de paquetes que utiliza el proyecto: Corsheaders, django rest framework_
 
 
 ## Despliegue 📦
