@@ -1,7 +1,7 @@
 ![Demonship_Logo_Full](https://github.com/user-attachments/assets/07e1ab5f-af7b-4f53-af32-c72e7abfbb0f)
 # Demonship RPG Character Creator
 
-_DemonshipRPGCC es una aplicacion web que permite a los jugadores de este sistema de rol crear sus personajes rápida y comodamente_
+_DemonshipRPGCC es una aplicacion web que permite a los jugadores de este sistema de rol crear sus personajes rápida y cómodamente_
 
 _El objetivo principal es reducir el tiempo que se le dedica a la creación de personajes, dando así más tiempo a los jugadores para disfrutar de la partida_
 
@@ -13,8 +13,21 @@ _Ordenador y navegador posterior a 2010_
 
 ### Instalación 🔧
 
-_Como otros proyectos de django, asegurate de crear un entorno virtual donde instalar django asi como el resto de paquetes que utiliza el proyecto: Corsheaders, django rest framework_
+_Para iniciar este proyecto debes crear un entorno virtual de python y despues lanzar los siguientes comandos_
 
+```
+pip install django
+pip install django-auth
+pip install django-cors-headers
+pip install djangorestframework
+pip install drf_yasg
+```
+
+_Una vez instalados, para arrancar el proyecto solo debes arrancar el backend_
+
+```
+python manage.py runserver
+```
 
 ## Despliegue 📦
 
