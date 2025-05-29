@@ -1,0 +1,4 @@
+demon/__pycache__/*
+db.sqlite3
+demon/migrations/__pycache__/*
+demonAPI/__pycache__/*
