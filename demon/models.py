@@ -31,6 +31,7 @@ class Personaje(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     clase = models.CharField(max_length=12, choices=CLASES,default='stalker')
     habilidades = models.TextField(max_length=500,blank=True, default='[]' )
+
     #stats
     fuerza = models.IntegerField()
     velocidad = models.IntegerField()
@@ -66,14 +67,12 @@ class Personaje(models.Model):
             habilidades+=['ap_combate','atletismo']
 
         if self.clase == 'mecanico':
-            #PENDING -10 a un stat
             self.intelig+=20
             self.fear+=60
             self.maxWounds+=1
             habilidades+=['eq_industrial','chapuzas','arqueologia']
 
         if self.clase == 'ciberchaman':
-            #PENDING +5 a 1 stat
             self.intelig+=10
             self.sanity+=30
 
@@ -92,7 +91,7 @@ class Personaje(models.Model):
         self.habilidades = json.dumps(habilidades)
         super(Personaje, self).save(*args, **kwargs)
 
-#Modelo de Armas.
+#Modelo de Armas. Unused
 class Arma(models.Model):
     RANGOS = [
         ('short','Short'),
@@ -108,4 +107,3 @@ class Arma(models.Model):
     tiros = models.IntegerField(blank=True)
     especial = models.TextField(blank=True)
     ammoPrice = models.TextField(blank=True)
-

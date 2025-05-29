@@ -14,6 +14,8 @@ from django.http import JsonResponse
 
 @require_http_methods(["GET"])
 class ListUsers(APIView):
+    #Listar usuarios (unused)
+
     authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAdminUser]
 
@@ -24,6 +26,7 @@ class ListUsers(APIView):
 @csrf_exempt
 class PersonajesAPIView(APIView):
     #permission_classes = [IsAuthenticated]
+    #devuelve toda la informacion de TODOS los personajes
 
     def get(self, request):
         personajes = Personaje.objects.filter(usuario=request.user).select_related("usuario")
@@ -32,7 +35,6 @@ class PersonajesAPIView(APIView):
         for pj in personajes:
             info_pj_ind = {
                 "nombre": pj.nombre,
-                "estado": pj.estado,
                 "fecha_creacion": pj.fecha_creacion,
             }
             lista_pjs.append(info_pj_ind)
