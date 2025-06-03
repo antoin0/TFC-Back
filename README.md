@@ -8,7 +8,10 @@ _El objetivo principal es reducir el tiempo que se le dedica a la creación de p
 
 ### Pre-requisitos 📋
 
-_Ordenador y navegador posterior a 2010_
+_Intel core i5-5200 (minimo)_
+_Nvidia GeForce GTX 750ti_
+_8GB de RAM_
+_2GB libres de disco duro_
 
 
 ### Instalación 🔧
@@ -33,12 +36,12 @@ python manage.py runserver
 
 _Esta aplicacion es el backend de [DemonshipRPG Character creator](https://github.com/antoin0/TFC-Front)_
 
-_Se encarga de montar la base de datos donde se guardará la informacion de los personajes, y tambien de modificar algunos campos del personaje cuando este se guarda_
+_Se encarga de montar la base de datos donde se guardará la informacion de los personajes, y tambien de modificar algunos campos del personaje al finalizar_
 
 
 ## Construido con 🛠️
 
-* [NextJS](https://nextjs.org/) - El framework web usado (REACT) (FRONT)
+* [NextJS](https://nextjs.org/) - El framework web usado por el frontend
 * [PNPM](https://pnpm.io/es/) - Manejador de dependencias
 * [TailwindCSS](https://tailwindcss.com/) - Usado para el CSS responsive
 * [Django](https://www.djangoproject.com/) - Backend 
