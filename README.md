@@ -57,4 +57,4 @@ _Se encarga de montar la base de datos donde se guardará la informacion de los 
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia Mia Propia (LMP) que definitivamente tengo
+Este proyecto está desarrollado bajo Mi Propia Licencia Personal (MPLP) que definitivamente tengo
