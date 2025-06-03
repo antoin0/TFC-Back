@@ -9,8 +9,11 @@ _El objetivo principal es reducir el tiempo que se le dedica a la creación de p
 ### Pre-requisitos 📋
 
 _Intel core i5-5200 (minimo)_
+
 _Nvidia GeForce GTX 750ti_
+
 _8GB de RAM_
+
 _2GB libres de disco duro_
 
 
